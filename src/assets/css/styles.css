@@ -1,0 +1,102 @@
+  .todoList {
+      -moz-box-shadow: 0 4px 16px #aaa;
+      -webkit-box-shadow: 0 4px 16px #aaa;
+      box-shadow: 0 4px 16px #aaa;
+      width: 500px;
+      margin: 30px auto;
+      border-top: solid 8px teal;
+  }
+
+  .todoList>* {
+      padding: 10px 20px;
+  }
+
+  .todoList h1 {
+      margin: 0;
+      background: #fff;
+      line-height: 1;
+  }
+  .todoList input[type="text"]{
+    width: 100%;
+    margin: 15px auto;
+    padding: .5em;
+    border: 1px solid #aaa;
+  }
+
+  .todoList .items {
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-direction: column;
+      flex-direction: column;
+      padding: 20px;
+      counter-reset: done-items pending-items;
+  }
+
+  .todoList h2 {
+      margin: 0;
+      padding: 10px 0;
+      font-size: 16px;
+      line-height: 1;
+      position: relative;
+  }
+
+  .todoList h2::before {
+      content: "";
+      display: block;
+      position: absolute;
+      left: -20px;
+      top: 15%;
+      width: 1px;
+      height: 70%;
+      border-left: solid 4px teal;
+  }
+
+  .todoList .badge {
+      -moz-border-radius: 6px;
+      -webkit-border-radius: 6px;
+      border-radius: 6px;
+      display: block;
+      float: right;
+      background: teal;
+      color: #fff;
+      padding: 4px;
+      min-width: 1.5em;
+      text-align: center;
+  }
+
+  .todoList label {
+      -moz-animation: pending 0.6s;
+      -webkit-animation: pending 0.6s;
+      animation: pending 0.6s;
+      display: block;
+      position: relative;
+      padding: 10px 0 10px 40px;
+      border-top: dashed 1px #fff;
+      cursor: pointer;
+      counter-increment: pending-items;
+  }
+
+  input[type="checkbox"]{
+    display: none;
+  }
+
+  .todoList label::before {
+    content: "☐";
+    display: inline-block;
+    background: lawngreen;
+  }
+  .todoList label.isDone::before {
+    content: "☑";
+  }
+  .todoList h2.pending{
+    order: 1;
+  }
+  .todoList h2.done{
+    order: 3;
+  }
+  .todoList label{
+    order: 2;
+  }
+  .todoList label.isDone{
+    order: 4;
+  }
