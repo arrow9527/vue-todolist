@@ -2,7 +2,7 @@
 <template>
   <div class="todoList">
     <header>
-      <h1>My To-Do List</h1>
+      <h1>待辦事項清單</h1>
       <input type="text" v-model="todo" @keyup.enter="addTodo" placeholder="加入ToDo" />
     </header>
     <section class="items">
